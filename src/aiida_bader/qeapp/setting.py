@@ -1,17 +1,19 @@
 """Panel for bader plugin."""
+
 import threading
-import time
 import ipywidgets as ipw
 from aiidalab_qe.common.panel import ConfigurationSettingsPanel
-from .model import ConfigurationSettingsModel
+from .model import BaderConfigurationSettingsModel
 from aiidalab_qe.common.infobox import InAppGuide
 from aiida_bader.utils import pseudo_group_exists, install_pseudos
 
 PSEUDO_PSL_URL = "https://pseudopotentials.quantum-espresso.org/legacy_tables"
 
 
-class ConfigurationSettingPanel(ConfigurationSettingsPanel[ConfigurationSettingsModel]):
-    def __init__(self, model: ConfigurationSettingsModel, **kwargs):
+class BaderConfigurationSettingPanel(
+    ConfigurationSettingsPanel[BaderConfigurationSettingsModel]
+):
+    def __init__(self, model: BaderConfigurationSettingsModel, **kwargs):
         super().__init__(model, **kwargs)
 
         self._model.observe(

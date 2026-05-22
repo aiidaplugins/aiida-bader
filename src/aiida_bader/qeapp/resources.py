@@ -7,7 +7,7 @@ from aiidalab_qe.common.panel import (
 )
 
 
-class ResourceSettingsModel(PluginResourceSettingsModel):
+class BaderResourceSettingsModel(PluginResourceSettingsModel):
     """Model for the bader code setting plugin."""
 
     title = "Bader charge"
@@ -36,7 +36,7 @@ class ResourceSettingsModel(PluginResourceSettingsModel):
         )
 
 
-class ResourceSettingsPanel(
-    PluginResourceSettingsPanel[ResourceSettingsModel],
+class BaderResourceSettingsPanel(
+    PluginResourceSettingsPanel[BaderResourceSettingsModel],
 ):
-    """Panel for configuring the wannier90 plugin."""
+    """Panel for configuring the bader plugin."""

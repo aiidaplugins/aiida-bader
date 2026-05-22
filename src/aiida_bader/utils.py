@@ -95,11 +95,10 @@ def get_bader_executable():
 def install_pseudos():
     import os
     from pathlib import Path
-    from aiida_bader.qeapp.model import ConfigurationSettingsModel
+    from aiida_bader.qeapp.model import BaderConfigurationSettingsModel
 
-    config_instance = ConfigurationSettingsModel()
+    config_instance = BaderConfigurationSettingsModel()
     for group_label in config_instance.pseudo_group_options:
-
         if not pseudo_group_exists(group_label):
             print(f"Downloading pseudopotential group '{group_label}'...")
             url = BASE_URL + group_label + ".aiida"

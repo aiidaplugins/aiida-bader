@@ -1,10 +1,10 @@
 from aiidalab_qe.common.panel import PluginOutline
 
-from .resources import ResourceSettingsModel, ResourceSettingsPanel
+from .resources import BaderResourceSettingsModel, BaderResourceSettingsPanel
 from .workchain import workchain_and_builder
 from .result import BaderResultsPanel, BaderResultsModel
-from .setting import ConfigurationSettingPanel
-from .model import ConfigurationSettingsModel
+from .setting import BaderConfigurationSettingPanel
+from .model import BaderConfigurationSettingsModel
 from .structure_examples import structure_examples
 from pathlib import Path
 
@@ -17,12 +17,12 @@ bader = {
     "outline": PluginOutline,
     "structure_examples": structure_examples,
     "configuration": {
-        "panel": ConfigurationSettingPanel,
-        "model": ConfigurationSettingsModel,
+        "panel": BaderConfigurationSettingPanel,
+        "model": BaderConfigurationSettingsModel,
     },
     "resources": {
-        "panel": ResourceSettingsPanel,
-        "model": ResourceSettingsModel,
+        "panel": BaderResourceSettingsPanel,
+        "model": BaderResourceSettingsModel,
     },
     "workchain": workchain_and_builder,
     "result": {
