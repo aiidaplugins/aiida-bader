@@ -1,10 +1,9 @@
 import traitlets as tl
 from aiidalab_qe.common.mixins import HasInputStructure
-from aiidalab_qe.common.panel import ConfigurationSettingsModel
-from aiida.orm import QueryBuilder, Group
+from aiidalab_qe.common.panel import PanelModel
 
 
-class ConfigurationSettingsModel(ConfigurationSettingsModel, HasInputStructure):
+class BaderConfigurationSettingsModel(PanelModel, HasInputStructure):
     title = "Bader charge"
     identifier = "bader"
 
