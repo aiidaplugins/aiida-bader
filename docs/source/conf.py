@@ -23,7 +23,7 @@ copyright = "2023, Xing Wang"
 author = "Xing Wang"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.1"
+release = "0.1.11"
 
 
 # -- General configuration ---------------------------------------------------
