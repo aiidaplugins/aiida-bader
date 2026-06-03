@@ -72,6 +72,8 @@ tests = [
 [project.entry-points."aiidalab_qe.properties"]
 "bader" = "aiida_bader.qeapp:bader"
 
+[project.scripts]
+aiida-bader = 'aiida_bader.__main__:cli'
 
 [tool.flit.sdist]
 include = ["aiida_bader/workchains/protocols/bader.yaml"]
