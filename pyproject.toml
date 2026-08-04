@@ -28,7 +28,6 @@ dependencies = [
     "aiida-core",
     "aiida-workgraph",
     "aiida-quantumespresso",
-    "aiida-cp2k",
     "weas-widget>=0.1.25",
     "table-widget>=0.0.3"
 ]
@@ -38,6 +37,9 @@ Documentation = "https://aiida-bader.readthedocs.io"
 Source = "https://github.com/superstar54/aiida-bader"
 
 [project.optional-dependencies]
+cp2k = [
+    "aiida-cp2k",
+]
 docs = [
     "sphinx_rtd_theme",
     "sphinx~=7.2",
