@@ -7,6 +7,7 @@
 AiiDA plugin for [Bader](https://theory.cm.utexas.edu/henkelman/code/bader/) charge analysis.
 
 ## Installation
+
 To install from PyPI, simply execute:
 
     pip install aiida-bader
@@ -16,6 +17,11 @@ or when installing from source:
     git clone https://github.com/superstar54/aiida-bader
     pip install aiida-bader
 
+### CP2K support
+
+`aiida-bader` provides a workflow for computing Bader charges from CP2K calculations. To use this workflow, you need to install the optional dependency with
+
+    pip install aiida-bader[cp2k]
 
 ## Cite
 
@@ -30,6 +36,7 @@ If you use the AiiDAlab QE app in your research, please cite:
 ## Development
 
 ### Running tests
+
 To run the tests, simply clone and install the package locally with the [tests] optional dependencies:
 
 ```shell
@@ -40,22 +47,25 @@ pytest # run tests
 ```
 
 ### Pre-commit
+
 To contribute to this repository, please enable pre-commit so the code in commits are conform to the standards.
 Simply install the repository with the `pre-commit` extra dependencies:
+
 ```shell
 cd aiida-bader
 pip install -e .[pre-commit]
 pre-commit install
 ```
 
-
-
 ## License
+
 The `aiida-bader` plugin package is released under the MIT license.
 See the `LICENSE` file for more details.
 
 ## Acknowledgements
+
 We acknowledge support from:
-* the [NCCR MARVEL](http://nccr-marvel.ch/) funded by the Swiss National Science Foundation;
+
+- the [NCCR MARVEL](http://nccr-marvel.ch/) funded by the Swiss National Science Foundation;
 
 <img src="docs/source/_static/images/MARVEL.png" width="250px" height="131px"/>

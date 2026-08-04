@@ -38,7 +38,15 @@ To install the package from source, first clone the repository and then install 
 
 The ``-e`` flag will install the package in editable mode, meaning that changes to the source code will be automatically picked up.
 
+CP2K support
+============
 
+``aiida-bader`` provides a workflow for computing Bader charges from CP2K calculations.
+To use this workflow, you need to install the optional dependency with
+
+.. code-block:: console
+
+    pip install aiida-bader[cp2k]
 
 .. |pip| replace:: ``pip``
 .. _pip: https://pip.pypa.io/en/stable/
