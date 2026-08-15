@@ -23,7 +23,7 @@ class BaderResultsModel(ResultsModel):
         Fetch data from the Bader calculation workchain outputs
         and store them into the model's traitlets.
         """
-        root = self.fetch_process_node()
+        root = self.process
 
         self.structure = root.inputs.bader.structure
         for key, pseudo in root.inputs.bader.scf.pw.pseudos.items():
