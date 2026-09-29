@@ -25,11 +25,11 @@ classifiers = [
 keywords = ["aiida", "bader", "quantum-espresso", "cp2k"]
 requires-python = ">=3.9"
 dependencies = [
-    "aiida-core",
-    "aiida-workgraph",
-    "aiida-quantumespresso",
-    "weas-widget>=0.1.25",
-    "table-widget>=0.0.3"
+    "aiida-core>=2.3,<3",
+    "aiida-workgraph>=0.4,<1",
+    "aiida-quantumespresso>=4.11,<6",
+    "weas-widget>=0.1.25,<1",
+    "table-widget>=0.0.3,<1"
 ]
 
 [project.urls]
