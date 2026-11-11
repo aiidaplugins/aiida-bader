@@ -1,43 +1,61 @@
-from aiidalab_qe.common.panel import PluginOutline
+"""AiiDAlab QE plugin for Bader charge analysis."""
 
-from .resources import BaderResourceSettingsModel, BaderResourceSettingsPanel
-from .workchain import workchain_and_builder
-from .result import BaderResultsPanel, BaderResultsModel
-from .setting import BaderConfigurationSettingPanel
-from .model import BaderConfigurationSettingsModel
-from .structure_examples import structure_examples
-from pathlib import Path
+from aiidalab_qe.plugins import QeAppPlugin
 
 
-class PluginOutline(PluginOutline):
-    title = "Bader charge analysis"
+class BaderPlugin(QeAppPlugin):
+    @property
+    def outline(self) -> str:
+        return "Bader charge analysis"
 
+    def structure_examples(self):
+        from .structure_examples import structure_examples
 
-bader = {
-    "outline": PluginOutline,
-    "structure_examples": structure_examples,
-    "configuration": {
-        "panel": BaderConfigurationSettingPanel,
-        "model": BaderConfigurationSettingsModel,
-    },
-    "resources": {
-        "panel": BaderResourceSettingsPanel,
-        "model": BaderResourceSettingsModel,
-    },
-    "workchain": workchain_and_builder,
-    "result": {
-        "panel": BaderResultsPanel,
-        "model": BaderResultsModel,
-    },
-    "guides": {
-        "title": "Bader charge analysis",
-        "path": Path(__file__).resolve().parent / "guides",
-    },
-    "metadata": {
-        "process_labels": {
-            "QeBaderWorkChain": "Bader charge workflow",
-            "PpCalculation": "Compute charge density",
-            "BaderCalculation": "Compute Bader charge",
+        return structure_examples
+
+    def configuration(self):
+        from .model import BaderConfigurationSettingsModel
+        from .setting import BaderConfigurationSettingPanel
+
+        return {
+            "panel": BaderConfigurationSettingPanel,
+            "model": BaderConfigurationSettingsModel,
         }
-    },
-}
+
+    def resources(self):
+        from .resources import BaderResourceSettingsModel, BaderResourceSettingsPanel
+
+        return {
+            "panel": BaderResourceSettingsPanel,
+            "model": BaderResourceSettingsModel,
+        }
+
+    def workchain(self):
+        from .workchain import workchain_and_builder
+
+        return workchain_and_builder
+
+    def result(self):
+        from .result import BaderResultsModel, BaderResultsPanel
+
+        return {
+            "panel": BaderResultsPanel,
+            "model": BaderResultsModel,
+        }
+
+    def guides(self):
+        from pathlib import Path
+
+        return {
+            "title": self.outline,
+            "path": Path(__file__).resolve().parent / "guides",
+        }
+
+    def metadata(self):
+        return {
+            "process_labels": {
+                "QeBaderWorkChain": "Bader charge workflow",
+                "PpCalculation": "Compute charge density",
+                "BaderCalculation": "Compute Bader charge",
+            }
+        }
