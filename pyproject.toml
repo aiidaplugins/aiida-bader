@@ -71,8 +71,8 @@ tests = [
 [project.entry-points."aiida.workflows"]
 "bader.qe" = "aiida_bader.workchains:QeBaderWorkChain"
 
-[project.entry-points."aiidalab_qe.properties"]
-"bader" = "aiida_bader.qeapp:bader"
+[project.entry-points."aiidalab_qe.plugins"]
+"bader" = "aiida_bader.qeapp:BaderPlugin"
 
 [project.scripts]
 aiida-bader = 'aiida_bader.__main__:cli'
