@@ -28,7 +28,9 @@ class BaderResultsPanel(ResultsPanel[BaderResultsModel]):
             },
         }
         self.structure_view = WeasWidget(
-            guiConfig=gui_config, viewerStyle={"width": "100%", "height": "600px"}
+            guiConfig=gui_config,
+            viewerStyle={"width": "100%", "height": "600px"},
+            layout=ipw.Layout(width="100%"),
         )
         self._setup_structure_view()
 
